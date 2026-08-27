@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="es-PE">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AutoRadar | Verificar autos en Lima y consulta vehicular Perú</title>
+  <meta name="description" content="Verificar autos en Lima nunca fue tan fácil: consulta gratis SOAT, papeletas, propietarios, revisión técnica, gravámenes y certificado GNV de cualquier vehículo en Perú. Fuentes oficiales SUNARP, APESEG, SAT y más.">
+  <meta name="keywords" content="verificar autos Lima, consulta vehicular Peru, consulta placa SUNARP, historial vehicular Lima, SOAT consulta, papeletas SAT, revision tecnica vehicular, consulta propietarios auto, gravamen vehicular, certificado GNV">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="AutoRadar">
+  <link rel="canonical" href="https://mathiashorna9.github.io/AUTORADAR/">
+
+  <!-- Open Graph / Facebook, WhatsApp, etc. -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://mathiashorna9.github.io/AUTORADAR/">
+  <meta property="og:title" content="AutoRadar | Verificar autos en Lima y consulta vehicular Perú">
+  <meta property="og:description" content="Verificar autos en Lima nunca fue tan fácil: consulta gratis SOAT, papeletas, propietarios, revisión técnica y certificado GNV en un solo lugar.">
+  <meta property="og:image" content="https://mathiashorna9.github.io/AUTORADAR/logo.png">
+  <meta property="og:locale" content="es_PE">
+  <meta property="og:site_name" content="AutoRadar">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="AutoRadar | Verificar autos en Lima y consulta vehicular Perú">
+  <meta name="twitter:description" content="Verificar autos en Lima nunca fue tan fácil: consulta gratis SOAT, papeletas, propietarios, revisión técnica y certificado GNV en un solo lugar.">
+  <meta name="twitter:image" content="https://mathiashorna9.github.io/AUTORADAR/logo.png">
+
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "AutoRadar",
+    "url": "https://mathiashorna9.github.io/AUTORADAR/",
+    "description": "Verificar autos en Lima y consultar el historial de vehículos en Perú: SOAT, papeletas, propietarios, revisión técnica y certificado GNV.",
+    "inLanguage": "es-PE"
+  }
+  </script>
+</head>
+<body>
+
+  <header class="nav">
+    <div class="nav-inner">
+      <a href="#" class="brand">
+        <img src="logo.png" alt="AutoRadar" class="brand-logo">
+      </a>
+      <nav class="nav-links">
+        <a href="#como-funciona">Cómo funciona</a>
+        <a href="#modulos">Consultas</a>
+        <a href="#modulos">AutosPerú</a>
+        <a href="#tips">Guía</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+      <a href="#hero" class="btn btn-gold btn-sm">Empezar consulta</a>
+      <button class="nav-toggle" aria-label="Abrir menú" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="mobile-menu">
+      <a href="#como-funciona">Cómo funciona</a>
+      <a href="#modulos">Consultas</a>
+      <a href="#modulos">AutosPerú</a>
+      <a href="#tips">Guía</a>
+      <a href="#faq">FAQ</a>
+      <a href="#hero" class="btn btn-gold">Empezar consulta</a>
+    </div>
+  </header>
+
+  <div class="logo-reveal-overlay" id="logoRevealOverlay" aria-hidden="true">
+    <button class="logo-reveal-close" id="logoRevealClose" aria-label="Cerrar">✕</button>
+    <div class="logo-reveal-slash"></div>
+    <img src="logo.png" alt="AutoRadar" class="logo-reveal-img">
+  </div>
+
+  <section class="hero" id="hero">
+    <div class="hero-carousel" aria-hidden="true">
+      <div class="hero-slide active" style="background-image: url('auto1.jpg');"></div>
+      <div class="hero-slide" style="background-image: url('auto2.jpg');"></div>
+    </div>
+    <div class="hero-overlay"></div>
+
+    <div class="wrap hero-content">
+      <span class="hero-badge fade-up">Verificar autos en Lima · Consulta premium</span>
+      <h1 class="fade-up delay-1">Consulta el historial de cualquier vehículo</h1>
+      <p class="hero-lead fade-up delay-2">Toda la información de un vehículo en un solo lugar.</p>
+
+      <div class="search-glass fade-up delay-3">
+        <label for="placaInput">Ingresa la placa del vehículo</label>
+        <div class="search-row">
+          <input id="placaInput" type="text" maxlength="7" placeholder="ABC-123" autocomplete="off">
+          <button class="btn btn-gold" type="button" onclick="buscarPlaca()">Buscar</button>
+        </div>
+        <p class="search-hint">Consulta datos oficiales de SUNARP, SOAT, SAT, SUTRAN y más en segundos.</p>
+        <p id="searchToast" class="search-toast">✓ Placa copiada. Selecciona un módulo para continuar.</p>
+      </div>
+
+      <div class="stats fade-up delay-4">
+        <div class="stat glass-stat">
+          <h3>7+</h3>
+          <span>Fuentes oficiales</span>
+        </div>
+        <div class="stat glass-stat">
+          <h3>100%</h3>
+          <span>Enlaces directos</span>
+        </div>
+        <div class="stat glass-stat">
+          <h3>0</h3>
+          <span>Datos almacenados</span>
+        </div>
+        <div class="stat glass-stat">
+          <h3>S/ 0</h3>
+          <span>Costo en prueba</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="como-funciona" class="section">
+    <div class="wrap">
+      <span class="section-tag reveal">Cómo funciona</span>
+      <h2 class="section-title reveal">Tres pasos para conocer tu vehículo</h2>
+      <p class="section-lead reveal">AutoRadar te conecta con las fuentes oficiales del Perú. Sin intermediarios, sin almacenar tus datos.</p>
+
+      <div class="steps">
+        <article class="step glass-card reveal">
+          <div class="step-num">01</div>
+          <h4>Ingresa la placa</h4>
+          <p>Escribe la placa una sola vez en el buscador principal. Se guarda solo en tu navegador mientras usas la página.</p>
+        </article>
+        <article class="step glass-card reveal">
+          <div class="step-num">02</div>
+          <h4>Elige el módulo</h4>
+          <p>Accede a datos generales, propietarios, SOAT, revisión técnica, papeletas o índice de riesgo.</p>
+        </article>
+        <article class="step glass-card reveal">
+          <div class="step-num">03</div>
+          <h4>Consulta en la fuente oficial</h4>
+          <p>Te llevamos directo al portal del Estado o la aseguradora correspondiente para completar tu consulta.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="modulos" class="section section-alt">
+    <div class="wrap">
+      <span class="section-tag reveal">Módulos de consulta</span>
+      <h2 class="section-title reveal">Todo lo que puedes revisar</h2>
+      <p class="section-lead reveal">Cada tarjeta abre la fuente oficial correspondiente. Información clara, organizada y al instante.</p>
+
+      <div class="grid">
+        <article class="card glass-card reveal">
+          <div class="card-icon">📋</div>
+          <span class="badge badge-gold">Directo</span>
+          <h4>Datos Generales</h4>
+          <p>Marca, modelo, año, color y estado de inscripción registral del vehículo.</p>
+          <div class="card-footer">
+            <span class="source-tag">Fuente: SUNARP</span>
+            <a class="card-btn fuente-btn" href="https://consultavehicular.sunarp.gob.pe/consulta-vehicular/inicio" target="_blank" rel="noopener">Consultar →</a>
+          </div>
+        </article>
+
+        <article class="card glass-card reveal">
+          <div class="card-icon">🪟</div>
+          <span class="badge badge-gold">Directo</span>
+          <h4>Lunas Polarizadas</h4>
+          <p>Verifica si el vehículo cuenta con el permiso vigente de la PNP para circular con lunas polarizadas.</p>
+          <div class="card-footer">
+            <span class="source-tag">Fuente: PNP</span>
+            <a class="card-btn fuente-btn" href="https://sistemadelunaspolarizadaspnp.com/?i=1" target="_blank" rel="noopener">Consultar →</a>
+          </div>
+        </article>
+
+        <article class="card glass-card reveal">
+          <div class="card-icon">👤</div>
+          <span class="badge badge-silver">Requiere DNI</span>
+          <h4>Propietarios</h4>
+          <p>Historial de dueños anteriores, embargos y gravámenes registrados en SUNARP.</p>
+          <div class="card-footer">
+            <span class="source-tag">Fuente: SUNARP (SPRL)</span>
+            <a class="card-btn fuente-btn" href="https://sprl.sunarp.gob.pe/sprl/ingreso" target="_blank" rel="noopener">Consultar →</a>
+          </div>
+        </article>
+
+        <article class="card glass-card reveal">
+          <div class="card-icon">🔄</div>
+          <span class="badge badge-silver">Requiere DNI</span>
+          <h4>Transferencias</h4>
+          <p>Registro de cambios de titularidad, inscripciones y trámites de transferencia vehicular.</p>
+          <div class="card-footer">
+            <span class="source-tag">Fuente: SUNARP</span>
+            <a class="card-btn fuente-btn" href="https://sprl.sunarp.gob.pe/sprl/ingreso" target="_blank" rel="noopener">Consultar →</a>
+          </div>
+        </article>
+
+        <article class="card glass-card reveal">
+          <div class="card-icon">🛡️</div>
+          <span class="badge badge-gold">Directo</span>
+          <h4>SOAT</h4>
+          <p>Estado del seguro obligatorio, aseguradora activa y fecha de vencimiento.</p>
+          <div class="card-footer">
+            <span class="source-tag">Fuente: APESEG</span>
+            <a class="card-btn fuente-btn" href="https://www.apeseg.org.pe/consultas-soat/" target="_blank" rel="noopener">Consultar →</a>
+          </div>
+        </article>
+
+        <article class="card glass-card reveal">
+          <div class="card-icon">🔧</div>
+          <span class="badge badge-gold">Directo</span>
+          <h4>Revisión Técnica</h4>
+          <p>Estado de la última inspección técnica vehicular (CITV) y próximo vencimiento.</p>
+          <div class="card-footer">
+            <span class="source-tag">Fuente: MTC</span>
+            <a class="card-btn fuente-btn" href="#" target="_blank" rel="noopener">Consultar →</a>
+          </div>
+        </article>
+
+        <article class="card glass-card reveal">
+          <div class="card-icon">⛽</div>
+          <span class="badge badge-gold">Directo</span>
+          <h4>Certificado GNV</h4>
+          <p>Verifica la vigencia del certificado de conversión a gas natural vehicular y su inspección anual.</p>
+          <div class="card-footer">
+            <span class="source-tag">Fuente: INFOGAS</span>
+            <a class="card-btn fuente-btn" href="https://infogas.com.pe/consulta-placa/" target="_blank" rel="noopener">Consultar →</a>
+          </div>
+        </article>
+
+        <article class="card glass-card reveal">
+          <div class="card-icon">🚔</div>
+          <span class="badge badge-gold">Directo</span>
+          <h4>Papeletas</h4>
+          <p>Infracciones de tránsito pendientes o pagadas en SAT, SUTRAN y ATU.</p>
+          <div class="card-footer">
+            <span class="source-tag">Fuente: SAT / SUTRAN</span>
+            <a class="card-btn fuente-btn" href="https://www.sat.gob.pe/VirtualSAT/principal.aspx" target="_blank" rel="noopener">Consultar →</a>
+          </div>
+        </article>
+
+        <article class="card glass-card reveal card-featured">
+          <div class="card-icon">⚡</div>
+          <span class="badge badge-gold">AutoRadar</span>
+          <h4>Índice de Riesgo</h4>
+          <p>Evaluación consolidada del vehículo basada en historial, multas, gravámenes y estado documental.</p>
+          <div class="card-footer">
+            <span class="source-tag">Análisis AutoRadar</span>
+            <a class="card-btn fuente-btn" href="#hero">Consultar →</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="tips" class="section">
+    <div class="wrap">
+      <span class="section-tag reveal">Guía AutoRadar</span>
+      <h2 class="section-title reveal">Antes de comprar un vehículo usado</h2>
+      <p class="section-lead reveal">Recomendaciones esenciales para tomar una decisión informada y segura.</p>
+
+      <div class="tips">
+        <article class="tip glass-card reveal">
+          <h4>El SOAT vigente no garantiza un auto limpio</h4>
+          <p>Un SOAT al día solo indica que puede circular legalmente. Revisa también propietarios, gravámenes y papeletas.</p>
+        </article>
+        <article class="tip glass-card reveal">
+          <h4>Las papeletas se heredan con el vehículo</h4>
+          <p>Las multas impagas siguen ligadas a la placa. Confirma en SAT, SUTRAN y ATU antes de firmar.</p>
+        </article>
+        <article class="tip glass-card reveal">
+          <h4>Un gravamen puede bloquear la transferencia</h4>
+          <p>Si hay prenda vehicular o crédito activo en SUNARP, no podrás inscribir la compra hasta levantarlo.</p>
+        </article>
+        <article class="tip glass-card reveal">
+          <h4>Revisa la revisión técnica y el GNV</h4>
+          <p>Un CITV vencido o cilindro de gas caducado impiden circular legalmente y recargar combustible.</p>
+        </article>
+        <article class="tip glass-card reveal">
+          <h4>Cómo consultar propietarios paso a paso</h4>
+          <p>Entra a SPRL de SUNARP, inicia sesión con tu DNI (clave SOL o registro rápido), busca por placa y revisa la partida registral: ahí aparecen los dueños anteriores, embargos y gravámenes vigentes.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq" class="section section-alt">
+    <div class="wrap">
+      <span class="section-tag reveal">Preguntas frecuentes</span>
+      <h2 class="section-title reveal">Resolvemos tus dudas</h2>
+
+      <div class="faq-list">
+        <details class="faq glass-card reveal">
+          <summary>¿AutoRadar guarda mi DNI o mi placa?</summary>
+          <p>No. Tu placa se queda solo en tu navegador mientras usas esta página. Cuando un módulo requiere DNI, lo ingresas directo en el portal oficial.</p>
+        </details>
+        <details class="faq glass-card reveal">
+          <summary>¿Por qué algunos módulos piden iniciar sesión?</summary>
+          <p>Cada entidad decide qué información es pública y cuál requiere verificar tu identidad. AutoRadar solo te lleva al lugar correcto.</p>
+        </details>
+        <details class="faq glass-card reveal">
+          <summary>¿AutoRadar es una entidad oficial del Estado?</summary>
+          <p>No. Somos un directorio que organiza fuentes oficiales para agilizar tu consulta. No reemplazamos a SUNARP, SAT, SUTRAN ni APESEG.</p>
+        </details>
+        <details class="faq glass-card reveal">
+          <summary>¿Esto tiene algún costo?</summary>
+          <p>Mientras esta página esté en fase de prueba, el uso es gratuito. Algunas fuentes oficiales pueden tener su propio costo por reporte.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section class="banner-section">
+    <div class="banner-image" style="background-image: url('banner.png');"></div>
+    <div class="banner-overlay"></div>
+    <div class="wrap banner-content">
+      <div class="banner-cta glass-card reveal">
+        <img src="logo.png" alt="AutoRadar" class="banner-logo">
+        <h2>¿Listo para consultar?</h2>
+        <p>Ingresa la placa y accede a todas las fuentes oficiales en minutos.</p>
+        <a href="#hero" class="btn btn-gold">Buscar ahora</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section disclaimer-section">
+    <div class="wrap">
+      <div class="disclaimer glass-card reveal">
+        <strong>Aviso legal:</strong> AutoRadar es un directorio informativo que enlaza a páginas de consulta pública de entidades oficiales peruanas (SUNARP, APESEG, SAT, SUTRAN, ATU e INFOGAS). No estamos afiliados a ninguna de estas entidades, no almacenamos datos personales y no accedemos en su nombre a información privada.
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap footer-row">
+      <a href="#" class="brand">
+        <img src="logo.png" alt="AutoRadar" class="brand-logo brand-logo-footer">
+      </a>
+      <div class="footer-links">
+        <a href="#como-funciona">Cómo funciona</a>
+        <a href="#modulos">Consultas</a>
+        <a href="#faq">FAQ</a>
+      </div>
+      <div class="footer-copy">© 2026 AutoRadar. Todos los derechos reservados.</div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
